@@ -6,6 +6,8 @@
 <ul>
   <li>Project Head: Adamo Pantaleo</li>
   <li>Head Coder: Camille Conner</li>
+  <li>Code Debugger: Ishan Gomber</li>
+  <li>Business Analyst: Jackson Boonmast</li>
 
 </ul>
 <h2>Features</h2>
