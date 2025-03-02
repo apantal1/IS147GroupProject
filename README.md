@@ -1,7 +1,7 @@
 <h1>Flight Booking System</h1>
 <h2>Project Overview</h2>
 <h3>Project Name: Altitude Airline System </h3>
-**Our project is centered around an airline booking system, as these kiosks and online machines can often be complicated and difficult to navigate. Our soluton is creating a airline travel system which is designed to create an efficient and convienent booking process. Our system will allow users to register with their own username, track flights, accumulate points and identify the best price deals. These flights will be on fixed schedules each day, between BWI and LAX, and prices will vary based on time, availability and other characteristics. Our users will be able to search for flights, and available seats at all times and will receive confirmed tickets the minute their flight is booked. Our goal is to provide an organized and efficient experience that makes booking flights easy and straight forward.**
+Our project is centered around an airline booking system, as these kiosks and online machines can often be complicated and difficult to navigate. Our soluton is creating a airline travel system which is designed to create an efficient and convienent booking process. Our system will allow users to register with their own username, track flights, accumulate points and identify the best price deals. These flights will be on fixed schedules each day, between BWI and LAX, and prices will vary based on time, availability and other characteristics. Our users will be able to search for flights, and available seats at all times and will receive confirmed tickets the minute their flight is booked. Our goal is to provide an organized and efficient experience that makes booking flights easy and straight forward.
 
 <h2>Group Roles</h2>
 <ul>
