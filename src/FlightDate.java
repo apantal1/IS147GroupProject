@@ -26,7 +26,7 @@ public class FlightDate {
     public static Boolean checkValid(String scanDate) {
         try {
             //checks if date is formatted correctly
-            LocalDate inputtedDate = LocalDate.parse(scanDate, formatter);
+            LocalDate.parse(scanDate, formatter);
 
             //checks if date exists
             String[] parts = scanDate.split("/");
