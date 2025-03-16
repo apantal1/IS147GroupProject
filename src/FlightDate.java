@@ -11,29 +11,46 @@ askArrive(): asks for arrival date. Throws error if arrival date is invalid
 sendRequest(): sends request to Flight.listFlights() if date is valid
  */
 
-import java.util.*;
 import java.time.*;
 import java.time.format.*;
+import  java.util.*;
 
 public class FlightDate {
-    int month;
-    int day;
-    int year;
-    public static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+    public static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/dd/yyyy");
 
+    public static String[] splitDate(String scanDate) {
+        return scanDate.split("/");
+    }
+
+    public static int getMonth(String scanDate) {
+        return Integer.parseInt(splitDate(scanDate)[0]);
+    }
+
+    public static int getDay(String scanDate) {
+        return Integer.parseInt(splitDate(scanDate)[1]);
+    }
+
+    public static int getYear(String scanDate) {
+        return Integer.parseInt(splitDate(scanDate)[2]);
+    }
+
+    public static void askDepart() {
+        Scanner input = new Scanner(System.in);
+        String departDate;
+        do {
+            System.out.println("Enter your desired departure date (MM/dd/yyyy): ");
+            departDate = input.nextLine();
+        } while (!checkValid(departDate) || !checkDepart(departDate));
+    }
 
     //checkValid()
     public static Boolean checkValid(String scanDate) {
         try {
             //checks if date is formatted correctly
-            LocalDate.parse(scanDate, formatter);
+            LocalDate inputtedDate = LocalDate.parse(scanDate, formatter);
+            LocalDate.of(getYear(scanDate), getMonth(scanDate), getDay(scanDate));
 
             //checks if date exists
-            String[] parts = scanDate.split("/");
-            int month = Integer.parseInt(parts[0]);
-            int day = Integer.parseInt(parts[1]);
-            int year = Integer.parseInt(parts[2]);
-            LocalDate.of(year, month, day);
 
         } catch (DateTimeParseException e) {
             System.out.println("Invalid date format. Please enter the date in MM/dd/yyyy format.");
@@ -47,20 +64,12 @@ public class FlightDate {
         return true;
     }
 
-    public static void askDepart() {
-        Scanner input = new Scanner(System.in);
-        String departDate;
-        do {
-            System.out.println("Enter your desired departure date (MM/dd/yyyy): ");
-            departDate = input.nextLine();
-        } while (!checkValid(departDate) || !checkDepart(departDate));
-    }
 
 
     public static Boolean checkDepart(String departDate) {
         LocalDate inputtedDate = LocalDate.parse(departDate, formatter);
         LocalDate today = LocalDate.now();
-        LocalDate endDate = today.plusDays(180);
+        LocalDate endDate = today.plusDays(360);
         if (inputtedDate.isBefore(today)) {
             System.out.println("That day has passed. Please choose a day after " + LocalDate.now().format(formatter) + " and before " + endDate.format(formatter));
             return false;
@@ -69,9 +78,38 @@ public class FlightDate {
             return false;
         } else{
             System.out.println("You have chosen " + departDate + " as your departure date.");
-
+            AllFlights.bookFlight(getMonth(departDate), getDay(departDate), getYear(departDate));
             return true;
         }
+    }
+
+
+    public static void askArrive() {
+        Scanner input = new Scanner(System.in);
+        String arrivalDate;
+        do {
+            System.out.println("Enter your desired arrival date (MM/dd/yyyy):");
+            arrivalDate = input.nextLine();
+        } while (!checkArrive(arrivalDate) || !checkValid(arrivalDate));
+
+    }
+
+    public static boolean checkArrive(String arrivalDate) {
+        LocalDate arrive = LocalDate.parse(arrivalDate, formatter);
+        LocalDate depart = LocalDate.parse(AllFlights.getLastBookedDate(), formatter);
+
+        LocalDate endDate = depart.plusDays(31);
+
+        if (arrive.isBefore(depart)) {
+            System.out.println("That date is before the departure date. Please enter the date after the departure date in MM/dd/yyyy format.");
+            return false;
+        } else {
+            AllFlights.bookFlight(getMonth(arrivalDate), getDay(arrivalDate), getYear(arrivalDate));
+            System.out.println("You have chosen " + arrivalDate + " as your arrival date.");
+            return true;
+        }
+
+
     }
 
 }
