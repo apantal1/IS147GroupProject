@@ -11,7 +11,6 @@ public class Flight {
         this.month = month;
         this.day = day;
         this.year = year;
-
         seatsAvailable--;
     }
 
