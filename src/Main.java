@@ -1,3 +1,13 @@
+//**
+ * Displays a welcome message and booking system details for Altitude Airline.
+ * The program provides the user with the option to book a departure date up to 180 days in advance,
+ * and a return trip arrival date up to 14 days after the departure date.
+ * <p>
+ * This method uses the current system date formatted as MM/dd/yyyy to inform users about the 
+ * booking policy for departure and return dates.
+ *
+ * @see FlightMenu
+ */
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.time.LocalDate;
@@ -8,8 +18,6 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         //input for depart date
-
-
 
         System.out.println("Welcome to the Altitude Airline booking system!");
         System.out.printf("You can book a departure date to 180 days in advance%n(" + LocalDate.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy")) + "), and a round trip arrival date up to 14 days after%nyour desired departure date.%n");
