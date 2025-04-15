@@ -1,3 +1,15 @@
+///**
+// * The FlightMenu class provides a simple text-based menu for users to interact with flight booking options.
+// * Users can choose to book a flight, view all booked flights, cancel a flight, or exit the application.
+// * The class utilizes a Scanner object to capture user input and process the selected option.
+// * <p>
+// * This menu prompts the user for flight details such as whether the flight is a round trip or one-way,
+// * and depending on the choice, it calls methods from the FlightDate and AllFlights classes to handle flight operations.
+// *
+// * @see FlightDate
+// * @see AllFlights
+// */
+
 import java.util.Scanner;
 
 public class FlightMenu {

@@ -1,13 +1,11 @@
-//**
- * Displays a welcome message and booking system details for Altitude Airline.
- * The program provides the user with the option to book a departure date up to 180 days in advance,
- * and a return trip arrival date up to 14 days after the departure date.
- * <p>
- * This method uses the current system date formatted as MM/dd/yyyy to inform users about the 
- * booking policy for departure and return dates.
- *
- * @see FlightMenu
- */
+//Displays a welcome message and booking system details for Altitude Airline.
+// The program provides the user with the option to book a departure date up to 180 days
+// in advance, and a return trip arrival date up to 14 days after the departure date.
+// <p>
+// This method uses the current system date formatted as MM/dd/yyyy to inform users about the
+// booking policy for departure and return dates.
+// @see FlightMenu
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.time.LocalDate;
