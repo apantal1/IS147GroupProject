@@ -12,7 +12,10 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+/**
+ * The {@code Main} class is the entry point for the Altitude Airline booking system.
+ * It displays a welcome message, shows booking guidelines, and starts the flight menu interface.
+ */
 public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
