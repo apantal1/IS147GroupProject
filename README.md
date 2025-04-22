@@ -19,4 +19,5 @@ Our project is centered around an airline booking system, as these kiosks and on
 <h3>Dynamic pricing based on seats available and departure time</h3>
 <blockquote>Flight pricing will be determined by the seats available and the departure time.</blockquote>
 
-
+JavaDocs Information:
+We used JavaDocs to document Java code, and break down the classes and methods used in our code. We created a comment tag on some of our created code and then generated the JavaDoc through Intellij. We then created the JavaDoc and pushed it onto GitHub, which now has created a website-like database for us to push our code too. This makes it easier for us to understand the purpose and usage of our code without needing to read through every line. Overall, JavaDocs will help us to create our website and design our code that helps to create the solution to the problem we are looking to solve. 
