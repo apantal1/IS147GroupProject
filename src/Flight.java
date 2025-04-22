@@ -1,17 +1,19 @@
 public class Flight {
-    private int id;
-    int month;
-    int day;
-    int year;
+    int id;
+    String date;
+    String airport;
 
     int seatsAvailable = 30;
 
-    public Flight(int id, int month, int day, int year) {
-        this.id = id;
-        this.month = month;
-        this.day = day;
-        this.year = year;
+    public Flight(int departId, String departDate, String departAirport) {
+        id = departId;
+        date = departDate;
+        airport = departAirport;
         seatsAvailable--;
+    }
+
+    public void setAirport(String airport) {
+        this.airport = airport;
     }
 
     public int getId() {
@@ -19,11 +21,21 @@ public class Flight {
     }
 
     public String getDate(){
-        return month + "/" + day + "/" + year;
+        return date;
+    }
+
+    public String getAirport() {
+        return airport;
     }
 
     public int seatsAvailable() {
         return seatsAvailable;
+    }
+
+
+    @Override
+    public String toString() {
+        return id + " " + date + " " + airport;
     }
 }
 

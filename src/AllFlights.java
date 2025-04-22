@@ -3,11 +3,15 @@ import java.util.List;
 
 public class AllFlights {
     private static List<Flight> flights = new ArrayList<>();
-    private static int nextId = 1;
+    private static int nextId = 0;
 
-    public static Flight bookFlight(int month, int day, int year) {
-        Flight flight = new Flight(nextId++, month, day, year);
+    public static Flight bookFlight(String date, String departAirport) {
+        nextId++;
+        Flight flight = new Flight(nextId, date, departAirport);
         flights.add(flight);
+
+        System.out.println("You have booked a flight at " + date + " coming from " +  departAirport);
+        System.out.println("Your flight id is " + nextId);
         return flight;
     }
 
@@ -16,10 +20,10 @@ public class AllFlights {
     }
 
     public static void listFlights() {
-        System.out.println("Available Flights:");
+        System.out.println("Booked Flights:");
         String flightList = "";
-        for (Flight r : getFlights()) {
-            System.out.println(flightList = r.getId() + " - " + r.getDate() + " - " + r.seatsAvailable);
+        for (Flight f : getFlights()) {
+            System.out.println(flightList = f.getId() + " - " + f.getDate() + " - " + f.getAirport());
         }
     }
 
@@ -48,4 +52,6 @@ public class AllFlights {
         }
         return false;
     }
+
+
 }
