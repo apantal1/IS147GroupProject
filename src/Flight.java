@@ -1,19 +1,14 @@
-public class Flight {
+abstract class Flight {
     int id;
-    String date;
-    String airport;
+    private String date;
+    private String airport;
+    private String time;
 
-    int seatsAvailable = 30;
 
-    public Flight(int departId, String departDate, String departAirport) {
+    static int seatsAvailable = 1;
+
+    public Flight(int departId, int seatsAvailable) {
         id = departId;
-        date = departDate;
-        airport = departAirport;
-        seatsAvailable--;
-    }
-
-    public void setAirport(String airport) {
-        this.airport = airport;
     }
 
     public int getId() {
@@ -24,18 +19,34 @@ public class Flight {
         return date;
     }
 
+    public String getTime() { return time;}
+
     public String getAirport() {
         return airport;
     }
 
-    public int seatsAvailable() {
+    public int getSeatsAvailable() {
         return seatsAvailable;
+    }
+
+    //--------------------- ASSIGNMENT OPERATORS --------------------------------
+    // sets depart date
+    public void setDate(String departDate) { date = departDate; }
+
+    // sets depart date
+    public void setTime(String departTime) { time = departTime; }
+
+    // sets depart airport
+    public void setAirport(String departAirport) {
+        airport = departAirport;
     }
 
 
     @Override
     public String toString() {
-        return id + " " + date + " " + airport;
+        return "Flight ID: " + id + " |  Flight Date: " + date + " | Flight Airport: " + airport + " | Flight Time: " + time + " | Seats Available: " + seatsAvailable;
     }
+
+
 }
 

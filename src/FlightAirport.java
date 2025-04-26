@@ -1,28 +1,24 @@
-import  java.util.*;
-
-public class FlightAirport {
+public class FlightAirport extends FlightDate {
     String airport;
-    public static Scanner input = new Scanner(System.in);
 
     public FlightAirport(String airport) {
+        super(airport);
         this.airport = airport;
-    }
-
-    public void setAirport(String uAirport) {
-        airport = uAirport;
     }
 
     public static String AskAirport() {
         String airport;
-        int LAX = 1;
-        int BWI = 2;
         do {
             System.out.println("Enter the desired departure airport:");
             System.out.println("LAX");
             System.out.println("BWI");
-            airport = input.nextLine();
+            airport = input.nextLine().toUpperCase();
         } while (!checkInput.checkAirport(airport));
 
+        return airport;
+    }
+
+    public String toString() {
         return airport;
     }
 

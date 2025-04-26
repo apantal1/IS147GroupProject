@@ -10,7 +10,7 @@ public class FlightDate {
 
     public static Scanner input = new Scanner(System.in);
 
-
+    //--------------------- METHOD RETURN VALUE --------------------------------
     // asks the user when they would like to depart
         public static String askDepart() {
             String departDate;
@@ -21,13 +21,16 @@ public class FlightDate {
             return departDate;
         }
 
-    public static FlightDate setDate(String date) {
-
+    public static FlightDate confirmDate(String date) {
         System.out.println("You have chosen " + date + " as your departure date.");
         return null;
     }
 
+    public String toString() {
+            return date;
     }
+
+}
 
 
 

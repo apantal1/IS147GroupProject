@@ -15,8 +15,11 @@ import java.util.Scanner;
 public class FlightMenu {
 
     public static void start() {
+
+        //--------------------- SCANNER CLASS --------------------------------
         Scanner input = new Scanner(System.in);
 
+        //--------------------- LOOP --------------------------------
         while (true) {
             System.out.println("1. Book a flight");
             System.out.println("2. View all booked flights");
@@ -25,16 +28,20 @@ public class FlightMenu {
             System.out.println("5. Exit");
 
             int choice = input.nextInt();
-            input.nextLine();
 
             switch (choice) {
                 case 1:
-                    String departDate;
 
-                    String deptDate = FlightDate.askDepart();
-                    String deptAirport = FlightAirport.AskAirport();
+                    //--------------------- VARIABLES --------------------------------
+                    String deptDate;
+                    String deptTime;
+                    String deptAirport;
 
-                    AllFlights.bookFlight(deptDate, deptAirport);
+                        deptDate = FlightDate.askDepart();
+                        deptAirport = FlightAirport.AskAirport();
+                        deptTime = FlightTime.AskTime();
+                        AllFlights.checkBooked(deptDate, deptAirport, deptTime);
+
 
                     System.out.println();
 

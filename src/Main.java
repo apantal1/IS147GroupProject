@@ -21,7 +21,7 @@ public class Main {
         //input for depart date
 
         System.out.println("Welcome to the Altitude Airline booking system!");
-        System.out.printf("You can book a departure date to 180 days in advance%n(" + LocalDate.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy")) + "), and a round trip arrival date up to 14 days after%nyour desired departure date.%n");
+        System.out.printf("You can book a departure date to 180 days in %nadvance (" + LocalDate.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy")) + ")%n");
 
         FlightMenu.start();
     }
