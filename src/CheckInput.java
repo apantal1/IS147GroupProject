@@ -3,7 +3,7 @@ import java.time.*;
 import java.time.format.*;
 import java.util.Objects;
 
-public class checkInput {
+public class CheckInput {
 
     //--------------------- Variables,Constants --------------------------------
     public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/dd/yyyy");
@@ -51,9 +51,9 @@ public class checkInput {
         }
     }
 
-    //--------------------- string class method --------------------------------
     // checks that depart date meets checkAirport condition
     public static boolean checkAirport (String airport) {
+        //--------------------- string class method --------------------------------
         if (Objects.equals(airport, "LAX") || Objects.equals(airport, "BWI")) {
             return true;
         } else {
@@ -62,6 +62,7 @@ public class checkInput {
         }
     }
 
+    // checks that depart time meets checkAirport condition
     public static boolean checkTime (String departTime) {
         int time = Integer.parseInt(departTime);
 
@@ -72,6 +73,20 @@ public class checkInput {
             throwError("checkTime");
             return false;
         }
+    }
+
+    public static boolean checkBooked(String date, String airport, String time) {
+        Flight flight = Flight.getFlightbyParams(date, airport, time);
+
+        //--------------------- conditional operator --------------------------------
+        if (flight != null) {
+            if (flight.getSeatsAvailable() <= 0) {
+                CheckInput.throwError("booked");
+                return false;
+            }
+        }
+        AllFlights.bookFlight(date, airport, time);
+        return true;
     }
 
 

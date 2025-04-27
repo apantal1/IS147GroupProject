@@ -10,7 +10,6 @@
 // * @see AllFlights
 // */
 
-import java.time.DateTimeException;
 import java.util.*;
 
 public class FlightMenu {
@@ -33,7 +32,7 @@ public class FlightMenu {
         try {
             Integer.parseInt(choice);
         } catch (NumberFormatException  e) {
-            checkInput.throwError("NumberFormatException");
+            CheckInput.throwError("NumberFormatException");
             return false;
         }
         return true;
@@ -60,17 +59,25 @@ public class FlightMenu {
                     //--------------------- Variables,Constants --------------------------------
 
                     String deptDate = FlightDate.askDepart();
-                    String deptAirport = FlightAirport.AskAirport();
+                    String deptAirport = FlightAirport.askAirport();
                     String deptTime = FlightTime.AskTime();
 
                     //--------------------- Method passing argument by values --------------------------------
-                    AllFlights.checkBooked(deptDate, deptAirport, deptTime);
 
-                    System.out.println();
+                    System.out.println("You are booking a flight for " + deptDate + " at " + deptTime + " departing from " + deptAirport);
+                    System.out.println("Confirm? (y for yes, n for no)");
+                    if(input.nextLine().equals("y")) {
+                        CheckInput.checkBooked(deptDate, deptAirport, deptTime);
+
+                    }
 
                     break;
                 case 2:
-                    AllFlights.listFlights();
+                    if(AllFlights.getFlights().size() <= 0) {
+                        System.out.println("There are no flights currently booked.");
+                    } else {
+                        AllFlights.listFlights();
+                    }
                     break;
                 case 3:
                     System.out.print("Flight ID: ");
@@ -93,6 +100,7 @@ public class FlightMenu {
                 default:
                     System.out.println("Invalid choice");
             }
+
             System.out.println();
 
         }

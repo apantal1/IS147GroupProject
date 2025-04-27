@@ -7,24 +7,10 @@ public class AllFlights extends Flight{
 
     // constructor that calls Flight class
     public AllFlights(int departId, int seatsAvailable) {
-        super(departId);
+        super(departId, seatsAvailable);
     }
     public static int departID = 0;
 
-
-    public static boolean checkBooked(String date, String airport, String time) {
-        Flight flight = getFlightbyParams(date, airport, time);
-
-        //--------------------- conditional operator --------------------------------
-        if (flight != null) {
-            if (flight.getSeatsAvailable() <= 0) {
-                checkInput.throwError("booked");
-                return false;
-            }
-        }
-        bookFlight(date, airport, time);
-        return true;
-    }
 
 
     // books flight based on given date and airport
@@ -42,10 +28,11 @@ public class AllFlights extends Flight{
 
         flights.add(flight);
 
-            System.out.printf("You have booked a flight on " + flight.getDate()  + " departing from " + flight.getAirport() + " at " + flight.getTime() +".%nYour flight id is " + departID + ".");
-            System.out.println();
-            System.out.print("Receipt Number: " );
-            System.out.printf("%.0f", recieptNum);
+        System.out.printf("You have booked a flight on " + flight.getDate()  + " departing from " + flight.getAirport() + " at " + flight.getTime() +".%nYour flight id is " + departID + ".");
+        System.out.println();
+        System.out.print("Receipt Number: " );
+        System.out.printf("%.0f", recieptNum);
+        System.out.println();
 
 
     }
@@ -72,11 +59,6 @@ public class AllFlights extends Flight{
             }
         }
         return null;
-    }
-
-    // get last booked flight
-    public static int getLastBookedFlight() {
-        return flights.size();
     }
 
     // cancels flight

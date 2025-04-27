@@ -10,8 +10,6 @@ public class FlightDate {
 
     public static Scanner input = new Scanner(System.in);
 
-
-
     //--------------------- Return value from method --------------------------------
     // asks the user when they would like to depart
         public static String askDepart() {
@@ -19,18 +17,12 @@ public class FlightDate {
             do {
                 System.out.println("Enter your desired departure date (MM/dd/yyyy): ");
                 departDate = input.nextLine();
-            } while (!checkInput.checkValid(departDate) || !checkInput.checkDepart(departDate));
+            } while (!CheckInput.checkValid(departDate) || !CheckInput.checkDepart(departDate));
             return departDate;
         }
 
-
-    public static void confirmDate(String date) {
-        System.out.println("You have chosen " + date + " as your departure date.");
-    }
-
-    public String toString() {
-            return date;
-    }
+    @Override
+    public String toString() { return date; }
 
 }
 

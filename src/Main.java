@@ -58,5 +58,7 @@ public class Main {
 
         FlightMenu.start();
 
+        System.out.println("Thank you for using the booking service. Please come again!");
+
     }
 }

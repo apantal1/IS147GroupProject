@@ -11,7 +11,7 @@ abstract class Flight {
     static int seatsAvailable = 1;
 
     //--------------------- constructor --------------------------------
-    public Flight(int id) {
+    public Flight(int id, int seatsAvailable) {
         //--------------------- using this keyword --------------------------------
         this.id = id;
     }

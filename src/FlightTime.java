@@ -1,9 +1,8 @@
+//--------------------- inheritance --------------------------------
 public class FlightTime extends FlightDate {
     String time;
 
-    public FlightTime(String departTime) {
-        super(departTime);
-    }
+    public FlightTime(String departTime) { super(departTime); }
 
     //--------------------- array --------------------------------
     public static String[][] flightTimes() {
@@ -42,17 +41,14 @@ public class FlightTime extends FlightDate {
             System.out.println("Enter the desired departure time:");
             listFlightTimes();
             time = input.nextLine();
-        } while (!checkInput.checkTime(time));
+        } while (!CheckInput.checkTime(time));
 
         return time;
     }
 
-    public static String getFlightTime(int menu) {
-        return flightTimes()[menu][1];
-    }
+    public static String getFlightTime(int menu) { return flightTimes()[menu][1]; }
 
-    public String toString() {
-        return time;
-    }
+    @Override
+    public String toString() { return time; }
 
 }
