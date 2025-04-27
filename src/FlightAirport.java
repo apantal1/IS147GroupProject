@@ -1,7 +1,9 @@
+//--------------------- inheritance --------------------------------
 public class FlightAirport extends FlightDate {
     String airport;
 
     public FlightAirport(String airport) {
+        //--------------------- super keyword --------------------------------
         super(airport);
         this.airport = airport;
     }

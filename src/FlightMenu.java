@@ -10,16 +10,39 @@
 // * @see AllFlights
 // */
 
-import java.util.Scanner;
+import java.time.DateTimeException;
+import java.util.*;
 
 public class FlightMenu {
+    //--------------------- Scanner Class --------------------------------
+    public static Scanner input = new Scanner(System.in);
+
+    //--------------------- method overloading --------------------------------
+    public static int getChoice(int choice) {
+        return choice;
+    }
+
+    public static int getChoice(String choice) {
+        while (!checkChoice(choice)) {
+           choice = input.nextLine();
+        };
+        return Integer.parseInt(choice);
+    }
+
+    public static boolean checkChoice(String choice) {
+        try {
+            Integer.parseInt(choice);
+        } catch (NumberFormatException  e) {
+            checkInput.throwError("NumberFormatException");
+            return false;
+        }
+        return true;
+    }
 
     public static void start() {
 
-        //--------------------- SCANNER CLASS --------------------------------
-        Scanner input = new Scanner(System.in);
 
-        //--------------------- LOOP --------------------------------
+        //--------------------- loop --------------------------------
         while (true) {
             System.out.println("1. Book a flight");
             System.out.println("2. View all booked flights");
@@ -27,20 +50,20 @@ public class FlightMenu {
             System.out.println("4. Cancel a flight");
             System.out.println("5. Exit");
 
-            int choice = input.nextInt();
+            int choice = getChoice(input.nextLine());
 
-            //--------------------- SWITCH STATEMENT --------------------------------
 
+            //--------------------- switch statement --------------------------------
             switch (choice) {
                 case 1:
 
-                    //--------------------- VARIABLES --------------------------------
+                    //--------------------- Variables,Constants --------------------------------
 
                     String deptDate = FlightDate.askDepart();
                     String deptAirport = FlightAirport.AskAirport();
                     String deptTime = FlightTime.AskTime();
 
-                    //--------------------- PASSING ARGUMENT BY VALUES --------------------------------
+                    //--------------------- Method passing argument by values --------------------------------
                     AllFlights.checkBooked(deptDate, deptAirport, deptTime);
 
                     System.out.println();
@@ -51,12 +74,12 @@ public class FlightMenu {
                     break;
                 case 3:
                     System.out.print("Flight ID: ");
-                    int id = input.nextInt();
+                    int id = getChoice(input.nextInt());
                     System.out.println(AllFlights.getFlightById(id));
                     break;
                 case 4:
                     System.out.print("Flight ID to cancel: ");
-                    id = input.nextInt();
+                    id = getChoice(input.nextInt());
                     input.nextLine();
 
                     if (AllFlights.cancelFlight(id)) {

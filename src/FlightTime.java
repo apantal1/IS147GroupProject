@@ -5,6 +5,7 @@ public class FlightTime extends FlightDate {
         super(departTime);
     }
 
+    //--------------------- array --------------------------------
     public static String[][] flightTimes() {
         String[][] flightTimes = new String[7][2];
         flightTimes[0][0] = "1";

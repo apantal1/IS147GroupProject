@@ -1,14 +1,18 @@
+import java.util.Objects;
+
+//--------------------- abstraction --------------------------------
 abstract class Flight {
     int id;
+
     private String date;
     private String airport;
     private String time;
 
-
     static int seatsAvailable = 1;
 
-    public Flight(int id, int seatsAvailable) {
-        //--------------------- THIS KEYWORD --------------------------------
+    //--------------------- constructor --------------------------------
+    public Flight(int id) {
+        //--------------------- using this keyword --------------------------------
         this.id = id;
     }
 
@@ -30,7 +34,7 @@ abstract class Flight {
         return seatsAvailable;
     }
 
-    //--------------------- ASSIGNMENT OPERATORS --------------------------------
+    //--------------------- enscapsulation --------------------------------
     // sets depart date
     public void setDate(String departDate) { date = departDate; }
 
@@ -42,6 +46,19 @@ abstract class Flight {
         airport = departAirport;
     }
 
+
+    public static Flight getFlightbyParams(String date, String airport, String time) {
+        for (Flight flight : AllFlights.getFlights()) {
+            System.out.println(flight.getAirport());
+
+            if (
+                    Objects.equals(flight.getDate(), date) && Objects.equals(flight.getTime(), time) && Objects.equals(flight.getAirport().trim(), airport.trim())) {
+                return flight;
+            }
+
+        }
+        return null;
+    }
 
     @Override
     public String toString() {

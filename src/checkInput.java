@@ -1,10 +1,11 @@
+//--------------------- Using Java library class such as Date, Random etc --------------------------------
 import java.time.*;
 import java.time.format.*;
 import java.util.Objects;
 
 public class checkInput {
 
-    //--------------------- FINAL VARIABLE --------------------------------
+    //--------------------- Variables,Constants --------------------------------
     public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/dd/yyyy");
 
     // checks that the date is formatted correctly and that the date exists (ie is not February 30th)
@@ -50,7 +51,7 @@ public class checkInput {
         }
     }
 
-    //--------------------- STRING METHOD --------------------------------
+    //--------------------- string class method --------------------------------
     // checks that depart date meets checkAirport condition
     public static boolean checkAirport (String airport) {
         if (Objects.equals(airport, "LAX") || Objects.equals(airport, "BWI")) {
@@ -63,6 +64,8 @@ public class checkInput {
 
     public static boolean checkTime (String departTime) {
         int time = Integer.parseInt(departTime);
+
+        //--------------------- logical operator --------------------------------
         if (time <= 7 && time >= 0) {
             return true;
         } else {
@@ -97,6 +100,10 @@ public class checkInput {
             }
             case "checkTime" : {
                 System.out.println("Error. Please choose an option between 1 and 7");
+                break;
+            }
+            case "NumberFormatException" : {
+                System.out.println("Error. Please input a number between 1 and 5.");
                 break;
             }
             case "booked" : {

@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class AllFlights extends Flight{
      static List<Flight> flights = new ArrayList<>();
@@ -12,23 +11,11 @@ public class AllFlights extends Flight{
     }
     public static int departID = 0;
 
-    public static Flight getFlightbyParams(String date, String airport, String time) {
-        for (Flight flight : flights) {
-            System.out.println(flight.getAirport());
-
-            if (
-                   Objects.equals(flight.getDate(), date) && Objects.equals(flight.getTime(), time) && Objects.equals(flight.getAirport().trim(), airport.trim())) {
-                return flight;
-            }
-
-        }
-        return null;
-    }
 
     public static boolean checkBooked(String date, String airport, String time) {
         Flight flight = getFlightbyParams(date, airport, time);
-        //--------------------- CONDITIONAL OPERATOR --------------------------------
 
+        //--------------------- conditional operator --------------------------------
         if (flight != null) {
             if (flight.getSeatsAvailable() <= 0) {
                 checkInput.throwError("booked");
@@ -42,9 +29,11 @@ public class AllFlights extends Flight{
 
     // books flight based on given date and airport
     public static void bookFlight(String date, String airport, String time) {
+        //--------------------- math class method --------------------------------
+        double recieptNum = Math.ceil(Math.random() * 10001);
 
-        //--------------------- MATH METHOD --------------------------------
-
+        //--------------------- arithmetic operator --------------------------------
+        //--------------------- create an object --------------------------------
         AllFlights flight = new AllFlights(departID++, seatsAvailable--);
 
         flight.setDate(date);
@@ -54,6 +43,9 @@ public class AllFlights extends Flight{
         flights.add(flight);
 
             System.out.printf("You have booked a flight on " + flight.getDate()  + " departing from " + flight.getAirport() + " at " + flight.getTime() +".%nYour flight id is " + departID + ".");
+            System.out.println();
+            System.out.print("Receipt Number: " );
+            System.out.printf("%.0f", recieptNum);
 
 
     }
