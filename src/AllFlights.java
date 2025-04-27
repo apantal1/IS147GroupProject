@@ -7,7 +7,7 @@ public class AllFlights extends Flight{
 
     // constructor that calls Flight class
     public AllFlights(int departId, int seatsAvailable) {
-        super(departId, seatsAvailable);
+        super(departId);
     }
     public static int departID = 0;
 
