@@ -10,6 +10,7 @@ public class AllFlights extends Flight{
     public AllFlights(int departId, int seatsAvailable) {
         super(departId, seatsAvailable);
     }
+    public static int departID = 0;
 
     public static Flight getFlightbyParams(String date, String airport, String time) {
         for (Flight flight : flights) {
@@ -26,6 +27,8 @@ public class AllFlights extends Flight{
 
     public static boolean checkBooked(String date, String airport, String time) {
         Flight flight = getFlightbyParams(date, airport, time);
+        //--------------------- CONDITIONAL OPERATOR --------------------------------
+
         if (flight != null) {
             if (flight.getSeatsAvailable() <= 0) {
                 checkInput.throwError("booked");
@@ -41,19 +44,16 @@ public class AllFlights extends Flight{
     public static void bookFlight(String date, String airport, String time) {
 
         //--------------------- MATH METHOD --------------------------------
-         int departID = 0;
 
-            AllFlights flight = new AllFlights(departID++, seatsAvailable--);
+        AllFlights flight = new AllFlights(departID++, seatsAvailable--);
 
-            flight.setDate(date);
-            flight.setAirport(airport);
-            flight.setTime(time);
-
+        flight.setDate(date);
+        flight.setAirport(airport);
+        flight.setTime(time);
 
         flights.add(flight);
 
-            System.out.println("You have booked a flight at " + date + " coming from " + airport);
-            System.out.println("Your flight id is " + departID);
+            System.out.printf("You have booked a flight on " + flight.getDate()  + " departing from " + flight.getAirport() + " at " + flight.getTime() +".%nYour flight id is " + departID + ".");
 
 
     }
@@ -90,6 +90,7 @@ public class AllFlights extends Flight{
     // cancels flight
     public static boolean cancelFlight(int id) {
         Flight flight = getFlightById(id);
+
         if (flight != null) {
             flights.remove(flight);
             return true;

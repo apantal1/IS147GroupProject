@@ -7,8 +7,9 @@ abstract class Flight {
 
     static int seatsAvailable = 1;
 
-    public Flight(int departId, int seatsAvailable) {
-        id = departId;
+    public Flight(int id, int seatsAvailable) {
+        //--------------------- THIS KEYWORD --------------------------------
+        this.id = id;
     }
 
     public int getId() {
@@ -19,7 +20,7 @@ abstract class Flight {
         return date;
     }
 
-    public String getTime() { return time;}
+    public String getTime() {return FlightTime.getFlightTime(Integer.parseInt(time));}
 
     public String getAirport() {
         return airport;
@@ -44,7 +45,11 @@ abstract class Flight {
 
     @Override
     public String toString() {
-        return "Flight ID: " + id + " |  Flight Date: " + date + " | Flight Airport: " + airport + " | Flight Time: " + time + " | Seats Available: " + seatsAvailable;
+        return String.format("Flight ID: " + id + System.lineSeparator()
+                + "Flight Date: " + date + System.lineSeparator()
+                + "Flight Airport: " + airport +  System.lineSeparator()
+                + "Flight Time: " + FlightTime.getFlightTime(Integer.parseInt(time))
+        );
     }
 
 

@@ -29,19 +29,19 @@ public class FlightMenu {
 
             int choice = input.nextInt();
 
+            //--------------------- SWITCH STATEMENT --------------------------------
+
             switch (choice) {
                 case 1:
 
                     //--------------------- VARIABLES --------------------------------
-                    String deptDate;
-                    String deptTime;
-                    String deptAirport;
 
-                        deptDate = FlightDate.askDepart();
-                        deptAirport = FlightAirport.AskAirport();
-                        deptTime = FlightTime.AskTime();
-                        AllFlights.checkBooked(deptDate, deptAirport, deptTime);
+                    String deptDate = FlightDate.askDepart();
+                    String deptAirport = FlightAirport.AskAirport();
+                    String deptTime = FlightTime.AskTime();
 
+                    //--------------------- PASSING ARGUMENT BY VALUES --------------------------------
+                    AllFlights.checkBooked(deptDate, deptAirport, deptTime);
 
                     System.out.println();
 
