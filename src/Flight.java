@@ -2,6 +2,7 @@ import java.util.Objects;
 
 //--------------------- abstraction --------------------------------
 abstract class Flight {
+
     int id;
 
     private String date;
@@ -46,19 +47,6 @@ abstract class Flight {
         airport = departAirport;
     }
 
-
-    public static Flight getFlightbyParams(String date, String airport, String time) {
-        for (Flight flight : AllFlights.getFlights()) {
-            System.out.println(flight.getAirport());
-
-            if (
-                    Objects.equals(flight.getDate(), date) && Objects.equals(flight.getTime(), time) && Objects.equals(flight.getAirport().trim(), airport.trim())) {
-                return flight;
-            }
-
-        }
-        return null;
-    }
 
     @Override
     public String toString() {

@@ -12,12 +12,21 @@ Our project is centered around an airline booking system, as these kiosks and on
 
 </ul>
 <h2>Features</h2>
-<h3>User registration and sign up</h3>
-<blockquote>Users can create an account that will check if their username exists and if their password matches. Users will be able to see the rewards points they have racked up and the recent flights that they have taken. </blockquote>
 <h3>Flight lookup system based on departure and arrival date</h3>
-<blockquote>Users will be able to input their desired departure and arrival date. The program will check if the date is within the booking window and then display the flights with available seats on that day.</blockquote>
-<h3>Dynamic pricing based on seats available and departure time</h3>
-<blockquote>Flight pricing will be determined by the seats available and the departure time.</blockquote>
+<blockquote> Users will be able to input their desired departure and arrival date.
+</blockquote>
+<h3>Date Verification:</h3>
+<blockquote>Program will check to make sure that the day is within the booking window (180 days in the future), that it has not passed, and that it exists (ie is not February 30th).
+</blockquote>
+<h3>Availability Verification</h3>
+<blockquote>
+Program will look for a flight at the requested day and time and will only book if there are seats available
+</blockquote>
+<h3>Flight ID search and cancellation</h3>
+<blockquote>
+Program will allow users to search for their flight with their flight ID and cancel
+</blockquote>
 
-JavaDocs Information:
-We used JavaDocs to document Java code, and break down the classes and methods used in our code. We created a comment tag on some of our created code and then generated the JavaDoc through Intellij. We then created the JavaDoc and pushed it onto GitHub, which now has created a website-like database for us to push our code too. This makes it easier for us to understand the purpose and usage of our code without needing to read through every line. Overall, JavaDocs will help us to create our website and design our code that helps to create the solution to the problem we are looking to solve. 
+<h3>JavaDocs Information:</h3>
+<blockquote>We used JavaDocs to document Java code, and break down the classes and methods used in our code. We created a comment tag on some of our created code and then generated the JavaDoc through Intellij. We then created the JavaDoc and pushed it onto GitHub, which now has created a website-like database for us to push our code too. This makes it easier for us to understand the purpose and usage of our code without needing to read through every line. Overall, JavaDocs will help us to create our website and design our code that helps to create the solution to the problem we are looking to solve. 
+</blockquote>

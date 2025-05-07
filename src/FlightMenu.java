@@ -24,7 +24,7 @@ public class FlightMenu {
     public static int getChoice(String choice) {
         while (!checkChoice(choice)) {
            choice = input.nextLine();
-        };
+        }
         return Integer.parseInt(choice);
     }
 
@@ -73,7 +73,7 @@ public class FlightMenu {
 
                     break;
                 case 2:
-                    if(AllFlights.getFlights().size() <= 0) {
+                    if(AllFlights.getFlights().isEmpty()) {
                         System.out.println("There are no flights currently booked.");
                     } else {
                         AllFlights.listFlights();

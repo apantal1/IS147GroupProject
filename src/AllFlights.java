@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class AllFlights extends Flight{
      static List<Flight> flights = new ArrayList<>();
@@ -10,7 +11,6 @@ public class AllFlights extends Flight{
         super(departId, seatsAvailable);
     }
     public static int departID = 0;
-
 
 
     // books flight based on given date and airport
@@ -72,6 +72,18 @@ public class AllFlights extends Flight{
         return false;
     }
 
+    public static Flight getFlightbyParams(String date, String airport, String time) {
+        for (Flight flight : AllFlights.getFlights()) {
+            System.out.println(flight.getAirport());
+
+            if (
+                    Objects.equals(flight.getDate(), date) && Objects.equals(flight.getTime(), time) && Objects.equals(flight.getAirport().trim(), airport.trim())) {
+                return flight;
+            }
+
+        }
+        return null;
+    }
 
 
 }

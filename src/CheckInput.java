@@ -76,7 +76,7 @@ public class CheckInput {
     }
 
     public static boolean checkBooked(String date, String airport, String time) {
-        Flight flight = Flight.getFlightbyParams(date, airport, time);
+        Flight flight = AllFlights.getFlightbyParams(date, airport, time);
 
         //--------------------- conditional operator --------------------------------
         if (flight != null) {
