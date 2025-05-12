@@ -5,10 +5,10 @@ Our project is centered around an airline booking system, as these kiosks and on
 
 <h2>Group Roles</h2>
 <ul>
-  <li>Project Head: Adamo Pantaleo</li>
-  <li>Head Coder: Camille Conner</li>
-  <li>Code Debugger: Ishan Gomber</li>
-  <li>Business Analyst: Jackson Boonmast</li>
+  <li>Project Head: Adamo Pantaleo: Responsible for overseeing head operations, communicating with members about completion of their tasks, organizing presentation and submission, helping other team members with their tasks, breaking down and understanding the code and what it does</li>
+  <li>Head Coder: Camille Conner: Responsible for main code construction, UML diagrams and java docs creation</li>
+  <li>Code Debugger: Ishan Gomber: Responsible for debugging code from Camille, assisting her with any coding requirements, breaking down code and its requirements</li>
+  <li>Business Analyst: Jackson Boonmast: Responsible for evaluating the used analytics in the project, assisting with business structure of the application/format for code, and helping Adamo to organize the business presentation of this project</li>
 
 </ul>
 <h2>Features</h2>
